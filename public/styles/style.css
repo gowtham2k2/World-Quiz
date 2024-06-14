@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
+
+:root {
+    --bgcolor: #ffff62;
+    --btncolor: #AF61FF;
+}
+
+
+body {
+    background-color: var(--bgcolor);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1 {
+    font-family: "Honk", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "MORF" 15,
+        "SHLN" 50;
+    font-size: 5rem;
+    text-shadow: #AF61FF;
+}
+
+.dashboard {
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header,
+footer {
+    text-align: center;
+    margin: 0;
+}
+
+
+/* welcome dashboard */
+.start {
+    text-align: center;
+    font-size: 1.7rem;
+    width: 30rem;
+    height: 20rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.start button {
+    padding: .8rem 1.5rem;
+    border-radius: 25px;
+    border: none;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 8px;
+    cursor: pointer;
+    background-color: var(--btncolor);
+    transition: transform 0.3s;
+}
+
+.start button:hover {
+    transform: scale(1.2);
+    color: #fff;
+    box-shadow: 0 4px 8px 0 var(--btncolor);
+
+}
+
+/* quiz section */
+.quiz {
+    display: grid;
+    grid-template: repeat(4, 7rem)/repeat(2, 20rem);
+    place-items: center;
+    align-content: space-evenly;
+    background-color: var(--btncolor);
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+
+.quiz>.quitbtn {
+    grid-area: 1/2/2/-1;
+    justify-self: end;
+    align-self: self-start;
+}
+
+.quiz>.quitbtn button {
+    background: none;
+    border: none;
+    font-weight: 700;
+    color: #d0a1ff;
+}
+.quiz>.quitbtn button:hover{
+    color: rgb(214, 53, 53);
+    text-shadow: 1px 1px #575757;
+}
+
+.quiz>h2 {
+    grid-area: 2/1/3/-1;
+}
+
+.quiz>h4 {
+    place-self: start;
+}
+
+.quiz>form {
+    grid-area: 3/1/4/-1;
+    justify-self: stretch;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.quiz>form>input {
+    width: 60%;
+    padding: .8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #585555;
+}
+
+.quiz>form>input:focus {
+    background-color: #fff;
+    color: #585555;
+}
+
+.quiz>form>input:focus::placeholder {
+    color: #585555;
+}
+
+.quiz>form>button {
+    background-color: var(--bgcolor);
+    border: none;
+    border-radius: 25px;
+    padding: .6rem 1rem;
+    width: 10rem;
+    font-size: .8rem;
+    font-weight: 900;
+    color: #4f148b;
+    transition: transform .5s ease;
+}
+
+.quiz>form>button:hover {
+    box-shadow: 1px 1px 8px 0 var(--bgcolor);
+    color: var(--btncolor);
+}
+
+.quiz>.result {
+    grid-area: 4/1/5/-1;
+    justify-self: stretch;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.quiz>.result>a {
+    align-self: flex-end;
+    text-decoration: none;
+    color: var(--btncolor);
+    transition: tranform 1s;
+    color: #4f148b;
+}
+
+.quiz>.result>a:hover {
+    color: var(--bgcolor);
+}
+
+/* result */
+.checkmark {
+    color: rgb(39, 240, 39);
+    animation: blink 200ms 5 ease;
+}
+
+.cross {
+    color: rgb(255, 13, 13);
+    animation: blink 200ms 5 ease;
+}
+
+@keyframes blink {
+    0% {}
+
+    25% {
+        color: transparent;
+    }
+
+    50% {}
+
+    75% {
+        color: transparent;
+    }
+
+    100% {}
+}
+
+@media(max-width: 400px) {
+    html {
+        font-size: 13px;
+    }
+
+    #globe-icon {
+        display: block;
+    }
+}

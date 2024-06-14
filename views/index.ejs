@@ -1,0 +1,55 @@
+<%- include("partials/header.ejs") %>
+    <div class="dashboard container">
+        <% if(locals.country){ %>
+            <div class="quiz">
+                <h4>
+                    Total Score: <%= totalScore %>
+                </h4>
+                <h2>
+                    <%= country.country %>
+                </h2>
+                <% if(locals.enableForm===true){ %>
+                    <form action="/submit" method="post">
+                        <input type="text" id="userInput" name="answer" placeholder="Enter the capital" autofocus
+                            autocomplete="off" required>
+                        <button type="submit">SUBMIT</button>
+                    </form>
+                    <% } %>
+                        <% if(locals.wasCorrect===true){ %>
+                            <div class="result">
+                                <p><span class="checkmark">correct ✔</span>: The capital of <%= country.country %> is
+                                        <strong>
+                                            <%= country.capital %>
+                                        </strong>
+                                </p>
+                                <a href="/">next question ></a>
+                            </div>
+                            <%}else if (locals.wasCorrect===false) { %>
+                                <div class="result">
+                                    <p class="m-0"><span class="cross">Wrong ✖</span>: The capital of <%=
+                                            country.country %> is <strong>
+                                                <%= country.capital %>
+                                            </strong>
+                                    </p>
+                                    <a href="/" class="text-center">next question></a>
+                                </div>
+                                <% } %>
+                                    <div class="quitbtn">
+                                        <form action="/quit" method="post">
+                                            <button type="submit">X</button>
+                                        </form>
+                                    </div>
+            </div>
+            <% }else if(locals.status){ %>
+                <div class="start">
+                    <p>Welcome to the World quiz.<br>You need to answer the correct name of the capital for the given
+                        Country</p>
+                    <form action="/start" method="post">
+                        <input type="hidden" id="startbtn" name="isGameStarted" value=<%=status %>>
+                        <button type="submit">START QUIZ</button>
+                    </form>
+                </div>
+                <% } %>
+
+    </div>
+    <%- include("partials/footer.ejs") %>
