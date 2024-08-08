@@ -41,6 +41,14 @@ Once you have the application running, you can start taking the quiz. Each quest
 
 Contributions are welcome! If you have suggestions for improvements or new features, feel free to create a pull request or open an issue in the repository.
 
+Happy quizzing and enjoy improving your geography knowledge with World Quiz!
+
 <hr>
 
-Happy quizzing and enjoy improving your geography knowledge with World Quiz!
+## Output
+
+<div align="center">
+<img src= "./example_img/eg1.jpg" height=250>
+<img src= "./example_img/eg3.jpg" height = 250>
+<img src= "./example_img/eg2.jpg" height = 250>
+</div>

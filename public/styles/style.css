@@ -20,7 +20,8 @@ h1 {
         "MORF" 15,
         "SHLN" 50;
     font-size: 5rem;
-    text-shadow: #AF61FF;
+    text-shadow: 1px 1px #AF61FF;
+    
 }
 
 .dashboard {
@@ -96,7 +97,8 @@ footer {
     font-weight: 700;
     color: #d0a1ff;
 }
-.quiz>.quitbtn button:hover{
+
+.quiz>.quitbtn button:hover {
     color: rgb(214, 53, 53);
     text-shadow: 1px 1px #575757;
 }
